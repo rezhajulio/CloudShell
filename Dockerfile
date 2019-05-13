@@ -1,10 +1,9 @@
 FROM gcr.io/cloudshell-images/cloudshell:latest
 
 # update all the installed stuff
-RUN apt update && apt dist-upgrade -y
-
-# install stuff
-RUN apt install zsh -y
+RUN apt-get update && \
+    apt-get dist-upgrade -y && \
+    apt-get install zsh -y
 
 # I just want to have latest python installed on Google Cloud Shell system instead of home folder using pyenv
 RUN cd /usr/src && \
@@ -14,4 +13,4 @@ RUN cd /usr/src && \
     ./configure --enable-optimizations && \
     make altinstall
 
-RUN pip3.7 install virtualenv virtualenv-wrapper
+RUN pip3.7 install virtualenv virtualenvwrapper
