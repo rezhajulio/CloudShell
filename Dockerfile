@@ -1,7 +1,7 @@
 FROM gcr.io/cloudshell-images/cloudshell:latest
 
 # update all the installed stuff
-RUN apt update && apt-dist-upgrade
+RUN apt update && apt dist-upgrade -y
 
 # install stuff
 RUN apt install zsh
