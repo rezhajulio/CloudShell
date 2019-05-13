@@ -4,7 +4,7 @@ FROM gcr.io/cloudshell-images/cloudshell:latest
 RUN apt update && apt dist-upgrade -y
 
 # install stuff
-RUN apt install zsh
+RUN apt install zsh -y
 
 # I just want to have latest python installed on Google Cloud Shell system instead of home folder using pyenv
 RUN cd /usr/src && \
